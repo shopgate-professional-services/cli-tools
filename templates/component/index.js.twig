@@ -1,0 +1,40 @@
+{% if type == 'class' %}
+import React, { Component } from 'react';
+{% else %}
+import React from 'react';
+{% endif %}
+import PropTypes from 'prop-types';
+{% if withStyles %}
+import styles from './styles';
+{% endif %}
+{% if withConnector %}
+import connect from './connector';
+{% endif %}
+
+{% if type == 'class' %}
+class {{ name }} extends Component {
+  static propTypes = {
+
+  };
+
+  static defaultProps = {
+
+  };
+
+  render() {
+    return null;
+  }
+}
+{% else %}
+const {{ name }} = () => null;
+
+{{ name }}.propTypes = {};
+
+{{ name }}.defaultProps = {};
+{% endif %}
+
+{% if withConnector %}
+export default connect({{ name }});
+{% else %}
+export default {{ name }};
+{% endif %}

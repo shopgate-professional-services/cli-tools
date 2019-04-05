@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const { prompt } = require('enquirer');
+const { twig } = require('twig');
+const { read, write, mkdirSafe, exists } = require('../filesystem');
 
 async function createComponent() {
   const response = await prompt([
@@ -11,23 +11,55 @@ async function createComponent() {
       required: true,
     },
     {
-    type: 'select',
-    name: 'type',
-    message: 'Class of function?',
-    choices: ['class', 'function']
+      type: 'select',
+      name: 'type',
+      message: 'Class of function?',
+      choices: ['class', 'function']
     },
+    {
+      type: 'confirm',
+      name: 'withStyles',
+      message: 'With styles?',
+      initial: true,
+    },
+    {
+      type: 'confirm',
+      name: 'withConnector',
+      message: 'With connector?',
+      initial: true,
+    }
   ]);
 
-  const fileName = response.type === 'class' ? 'classComponent' : 'functionalComponent';
-  const componentContent = fs.readFileSync(path.resolve(`${path.dirname(require.main.filename)}/templates/component/${fileName}.js`)).toString();
-
-  if (!fs.existsSync(path.resolve('./components'))) {
-    fs.mkdirSync('./components')
+  if (exists(`./components/${response.name}`)) {
+    throw new Error(`./components/${response.name} already exists. Aborting`);
   }
 
-  const resultComponent = componentContent.replace(/Name/g, response.name);
+  mkdirSafe(`./components`);
+  mkdirSafe(`./components/${response.name}`)
 
-  fs.writeFileSync(`./components/${response.name}.jsx`, resultComponent);
+  const fileName = response.type === 'class' ? 'classComponent' : 'functionalComponent';
+
+  const index = twig({
+    data: read('/templates/component/index.js.twig', true)
+  });
+  const resultComponent = await index.render(response)
+  write(`./components/${response.name}/index.jsx`, resultComponent);
+
+  if (response.withStyles) {
+    const styles = twig({
+      data: read('/templates/component/styles.js.twig', true)
+    });
+    write(`./components/${response.name}/styles.js`, await styles.render(response));
+  }
+
+  if (response.withConnector) {
+    const connector = twig({
+      data: read('/templates/component/connector.js.twig', true)
+    });
+    write(`./components/${response.name}/connector.js`, await connector.render(response));
+  }
+
+  console.log('🚀 All done, goodbye!')
 }
 
 module.exports = createComponent;
