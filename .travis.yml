@@ -1,0 +1,14 @@
+cache:
+  directories:
+    - node_modules
+language: node_js
+node_js:
+  - "10.10.0"
+install:
+  - echo "Hello"
+script: npm run coverage --maxWorkers=4 --ci
+branches:
+  only:
+    - master
+notifications:
+  email: false
