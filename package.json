@@ -1,0 +1,38 @@
+{
+  "name": "@shopgate-ps/cli-tools",
+  "version": "0.0.2",
+  "description": "Shopgate Professional Services CLI tools",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "sps": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shopgate-professional-services/cli-tools.git"
+  },
+  "keywords": [
+    "shopgate-ps",
+    "shopgate",
+    "cli-tools"
+  ],
+  "author": "Shopgate GmbH",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shopgate-professional-services/cli-tools/issues"
+  },
+  "homepage": "https://github.com/shopgate-professional-services/cli-tools#readme",
+  "devDependencies": {
+    "@shopgate/eslint-config": "^6.3.2",
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "caporal": "^1.1.0",
+    "enquirer": "^2.3.0"
+  }
+}
