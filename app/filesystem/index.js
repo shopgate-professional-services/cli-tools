@@ -25,9 +25,14 @@ const exists = (pathname) => {
   return fs.existsSync(path.resolve(pathname));
 }
 
+const append = (pathname, content) => {
+  return fs.appendFileSync(pathname, content);
+}
+
 module.exports = {
   read,
   write,
   mkdirSafe,
   exists,
+  append,
 }

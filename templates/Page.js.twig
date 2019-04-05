@@ -1,0 +1,21 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withThemeComponents } from '@shopgate-ps/pwa-extension-kit/connectors';
+
+/**
+ * {{ name }}
+ */
+const {{ name }} = ({ AppBar, View }) => (
+  <View>
+    <AppBar title="dummy title">
+      <div>Dummy Page</div>
+    </AppBar>
+  </View>
+);
+
+{{ name }}.propTypes = {
+  AppBar: PropTypes.func.isRequired,
+  View: PropTypes.func.isRequired,
+};
+
+export default withThemeComponents({{ name }});
