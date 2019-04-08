@@ -1,0 +1,10 @@
+import { createSelector } from 'reselect';
+
+const REDUX_NAMESPACE_CARD = '{{ extensionName }}/{{ entityNameCamel }}';
+
+const getExtensionsState = state.extensions;
+
+const getMainState = createSelector(
+  getExtensionsState,
+  (state) => state[REDUX_NAMESPACE_CARD],
+);

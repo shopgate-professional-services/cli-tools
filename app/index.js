@@ -5,6 +5,7 @@ const createComponent = require('./actions/createComponent');
 const createRoute = require('./actions/createRoute');
 const createLanguage = require('./actions/createLanguage');
 const createSubscription = require('./actions/createSubscriptions');
+const createReduxEntity = require('./actions/createReduxEntity');
 
 /**
  * Main app.
@@ -38,6 +39,13 @@ function app() {
     .action((...args) => {
       before();
       createSubscription(...args);
+    })
+    // Create redux entity
+    .command('create redux entity', 'Adds new redux entity: selectors, actions, reducer')
+    .alias('create redux')
+    .action((...args) => {
+      before();
+      createReduxEntity(...args);
     });
 
   prog.parse(process.argv);

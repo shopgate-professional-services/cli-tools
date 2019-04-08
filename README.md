@@ -30,6 +30,11 @@ Creates subscriptions files.
 #### Options
 This command has no options. Would fail if there is already subscriptions file.
 
+### sps create redux entity (alias: create redux)
+Creates redux entity: reducer, selectors, actions.
+#### Options
+This command has no options.
+
 ## About Shopgate
 
 Shopgate is the leading mobile commerce platform.
