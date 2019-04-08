@@ -1,6 +1,7 @@
 const { prompt } = require('enquirer');
 const { twig } = require('twig');
 const { read, write, mkdirSafe, append } = require('../filesystem');
+const { addComponent } = require('../extensionConfig');
 
 async function createRoute() {
   const options = await prompt([
@@ -18,18 +19,12 @@ async function createRoute() {
     }
   ]);
 
-  const extensionConfig = JSON.parse(read('./extension-config.json'));
-  if (!extensionConfig.components) {
-    extensionConfig.components = [];
-  }
-  extensionConfig.components.push({
+  addComponent({
     id: options.name,
     path: `frontend/routes/${options.name}/index.jsx`,
     target: 'app.routes',
     type: 'portals'
   });
-
-  write('./extension-config.json', JSON.stringify(extensionConfig, null, 2));
 
   mkdirSafe('./frontend/routes');
   mkdirSafe(`./frontend/routes/${options.name}Route`)

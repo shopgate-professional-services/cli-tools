@@ -29,10 +29,15 @@ const append = (pathname, content) => {
   return fs.appendFileSync(pathname, content);
 }
 
+const listFiles = (pathname) => {
+  return fs.readdirSync(path.resolve(pathname));
+}
+
 module.exports = {
   read,
   write,
   mkdirSafe,
   exists,
   append,
+  listFiles,
 }

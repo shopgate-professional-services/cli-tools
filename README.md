@@ -15,6 +15,12 @@ Creates component in the nearest `components` folder. If folder doesn't exists, 
 
 ### sps create route
 Crates new route with Route and Page component. Adds a PATTERN constant. Makes sure all is configured in extension-config.
+
+### sps create language (alias: create locale)
+Adds new language from an existing template (en-US or first found).
+#### Options
+- Language code: e.x. pl-PL (iso format)
+
 #### Options
 - Route/Page name - Just the name "Stars" would create `StarsRoute`, `StarsPage` and `STARS_PATTERN`
 - Route pattern - Route pattern, e.x. `/stars'

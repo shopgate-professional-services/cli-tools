@@ -2,6 +2,7 @@ const prog = require('caporal');
 const package = require('../package');
 const createComponent = require('./actions/createComponent');
 const createRoute = require('./actions/createRoute');
+const createLanguage = require('./actions/createLanguage');
 
 function app() {
   prog
@@ -12,7 +13,11 @@ function app() {
     .action(createComponent)
     // Create route
     .command('create route', 'Create route components (Route, Page, etc.)')
-    .action(createRoute);
+    .action(createRoute)
+    // Create language
+    .command('create language', 'Adds new language translations')
+    .alias('create locale')
+    .action(createLanguage);
 
   prog.parse(process.argv);
 }
