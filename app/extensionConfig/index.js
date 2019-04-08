@@ -4,6 +4,10 @@ const getConfig = () => {
   return JSON.parse(read('./extension-config.json'));
 };
 
+const saveConfig = (newConfig) => {
+  write('./extension-config.json', JSON.stringify(newConfig, null, 2));
+}
+
 /**
  * Adds a component to extension-config.json
  * @param {Object} element Extension-config.json valid components object.
@@ -15,7 +19,22 @@ function addComponent(element) {
   }
   extensionConfig.components.push(element);
 
-  write('./extension-config.json', JSON.stringify(extensionConfig, null, 2));
+  saveConfig(extensionConfig);
+}
+
+/**
+ * Adds new step to extension-config.json.
+ * @param {Object} element Extension-config valid steps object.
+ */
+function addStep(element) {
+  const extensionConfig = getConfig();
+  if (!extensionConfig.steps) {
+    extensionConfig.steps = [];
+  }
+
+  extensionConfig.steps.push(element);
+
+  saveConfig(extensionConfig);
 }
 
 /**
@@ -31,4 +50,5 @@ function getExtensionName() {
 module.exports = {
   addComponent,
   getExtensionName,
+  addStep,
 };

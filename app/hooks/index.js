@@ -5,7 +5,7 @@ const { exists } = require('../filesystem');
  * Function that is called before every action.
  */
 function before() {
-  if (!(exists('frontend'))) {
+  if (!(exists('frontend') || exists('backend'))) {
     console.log('⛔️⛔️⛔️⛔️⛔️⛔️⛔️⛔️ ERROR ⛔️⛔️⛔️⛔️⛔️⛔️');
     console.log('\r\n');
     console.log('⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬⏬');

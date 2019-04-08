@@ -6,6 +6,7 @@ const createRoute = require('./actions/createRoute');
 const createLanguage = require('./actions/createLanguage');
 const createSubscription = require('./actions/createSubscriptions');
 const createReduxEntity = require('./actions/createReduxEntity');
+const createStep = require('./actions/createStep');
 
 /**
  * Main app.
@@ -46,6 +47,13 @@ function app() {
     .action((...args) => {
       before();
       createReduxEntity(...args);
+    })
+    // Create step (hook)
+    .command('create step', 'Adds new extension backend pipeline step (hook)')
+    .alias('create hook')
+    .action((...args) => {
+      before();
+      createStep(...args);
     });
 
   prog.parse(process.argv);

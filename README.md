@@ -26,14 +26,13 @@ Adds new language from an existing template (en-US or first found).
 - Route pattern - Route pattern, e.x. `/stars'
 
 ### sps create subscriptions (alias: create subscription)
-Creates subscriptions files.
-#### Options
-This command has no options. Would fail if there is already subscriptions file.
+Creates subscriptions files. Would fail if there is already subscriptions file.
 
 ### sps create redux entity (alias: create redux)
 Creates redux entity: reducer, selectors, actions.
-#### Options
-This command has no options.
+
+### sps create step (alias: create hook)
+Creates new hook step
 
 ## About Shopgate
 
