@@ -1,9 +1,32 @@
 # Shopgate Professional Services - Cli Tools
 
 ## Description
-Here soon will have place Cli Tools dedicated for generating parts of Shopgate Connect extensions, SGConnect helpers and everything else that speeds up our work.
+This npm package offers CLI tools which helps creating different parts of the code during the Shopgate Connect extensions development.
 
-## Commands
+## Quick start / Installation
+### Installation
+This tools is meant to be installed only as a global npm package. Please install it with following command.
+```bash
+npm i -G @shopgate-ps/cli-tools
+```
+
+### Quick start
+In order to execute tools simply type `sps` in your terminal.
+Typing just the `sps` would list all possible commands with their description. If any command need additional params you'd be asked during the execution.
+
+When calling actual commands, terminal must be CWD into your extension root folder, e.x:
+```bash
+cd ~/myDev/extensions/MyExtension
+```
+
+Before every command execution it would check if there is `frontend` or `backend` folder accessible. If not it would abort with an error message.
+
+#### Danger zone
+This tool *changes your files and directories*. Make sure to run this tool when your change on a clean directory. Always commit or stash your changes before using it so in case of ungraceful failure you'd be able to reset to previous state easily.
+
+Even though it's not likely, this tool _might_ break you system. Use at your own risk.
+
+## Frontend Commands
 ### sps add component
 Creates component in the nearest `components` folder. If folder doesn't exists, it would crate one.
 
@@ -31,8 +54,16 @@ Creates subscriptions files. Would fail if there is already subscriptions file.
 ### sps add redux entity (alias: add redux)
 Creates redux entity: reducer, selectors, actions.
 
+### sps add portal
+Creates a portal position file and relared extension-config.json entry.
+
+## Backend commands
 ### sps add step (alias: add hook)
 Creates new hook step
+
+### sps add pipeline
+Creates new empty pipeline with a single step file.
+
 
 ## About Shopgate
 
@@ -45,7 +76,7 @@ apps and mobile websites for the iPhone, iPad, Android smartphones and tablets.
 
 ## License
 
-Shopgate Cloud - Extension Boilerplate is available under the Apache License, Version 2.0.
+Shopgate Professional Services - Cli Tools is available under the Apache License, Version 2.0.
 
 See the [LICENSE](./LICENSE) file for more information.
 
