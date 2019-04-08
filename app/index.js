@@ -8,7 +8,7 @@ const createSubscription = require('./actions/createSubscriptions');
 const createReduxEntity = require('./actions/createReduxEntity');
 const createStep = require('./actions/createStep');
 const createPipeline = require('./actions/createPipeline');
-
+const createPortal = require('./actions/createPortal');
 /**
  * Main app.
  */
@@ -60,6 +60,11 @@ function app() {
     .action((...args) => {
       before();
       createPipeline(...args);
+    })
+    .command('add portal', 'Adds new portal position component')
+    .action((...args) => {
+      before();
+      createPortal(...args);
     });
 
   prog.parse(process.argv);
