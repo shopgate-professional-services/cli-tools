@@ -11,7 +11,9 @@ node_js:
   - "node"
 install:
   - npm i
-script: sps --version
+script:
+  - npm link
+  - sps --version
 branches:
   only:
     - master
