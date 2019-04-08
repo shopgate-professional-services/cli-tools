@@ -48,6 +48,7 @@ async function createRoute() {
   write(`./frontend/pages/${options.name}Page/index.jsx`, pageComponent);
 
   append('./frontend/constants.js', `export const ${options.name.toUpperCase()}_PATTERN = '${options.pattern}';`);
+  append('./frontend/constants.js', `\r\n`);
 }
 
 module.exports = createRoute;
