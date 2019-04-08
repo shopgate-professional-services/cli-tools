@@ -11,7 +11,7 @@ node_js:
   - "node"
 install:
   - npm i
-script: npm run test --maxWorkers=6 --ci
+script: sps --version
 branches:
   only:
     - master

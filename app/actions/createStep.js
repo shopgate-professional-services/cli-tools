@@ -1,10 +1,13 @@
 const { prompt } = require('enquirer');
 const { twig } = require('twig');
 const {
-  read, write, mkdirSafe, append,
+  read, write, mkdirSafe,
 } = require('../filesystem');
 const { addStep } = require('../extensionConfig');
 
+/**
+ * Creates step
+ */
 async function createStep() {
   const options = await prompt([
     {
