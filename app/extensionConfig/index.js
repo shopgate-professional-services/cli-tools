@@ -1,5 +1,9 @@
 const { read, write } = require('../filesystem');
 
+/**
+ * Adds a component to extension-config.json
+ * @param {Object} element Extension-config.json valid components object.
+ */
 function addComponent(element) {
   const extensionConfig = JSON.parse(read('./extension-config.json'));
   if (!extensionConfig.components) {
@@ -12,4 +16,4 @@ function addComponent(element) {
 
 module.exports = {
   addComponent,
-}
+};

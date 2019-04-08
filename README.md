@@ -25,6 +25,11 @@ Adds new language from an existing template (en-US or first found).
 - Route/Page name - Just the name "Stars" would create `StarsRoute`, `StarsPage` and `STARS_PATTERN`
 - Route pattern - Route pattern, e.x. `/stars'
 
+### sps create subscriptions (alias: create subscription)
+Creates subscriptions files.
+#### Options
+This command has no options. Would fail if there is already subscriptions file.
+
 ## About Shopgate
 
 Shopgate is the leading mobile commerce platform.

@@ -29,10 +29,11 @@
   "homepage": "https://github.com/shopgate-professional-services/cli-tools#readme",
   "devDependencies": {
     "@shopgate/eslint-config": "^6.3.2",
-    "eslint": "^5.16.0"
+    "eslint": "^4.17.0"
   },
   "dependencies": {
     "caporal": "^1.1.0",
+    "colors": "^1.3.3",
     "enquirer": "^2.3.0",
     "twig": "^1.13.2"
   }
