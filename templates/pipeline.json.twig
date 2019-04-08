@@ -1,0 +1,26 @@
+{
+  "version": "1",
+  "pipeline": {
+    "id": "{{ id }}",
+    "public": true,
+    "input": [
+      {"key": "sgxsMeta", "id": "1000"}
+    ],
+    "output": [
+      {"key":  "foo", "id":  1010}
+    ],
+    "steps": [
+      {
+        "type": "extension",
+        "id": "{{ extensionName }}",
+        "path": "{{ extensionName }}/steps/foo.js",
+        "input": [
+          {"key": "sgxsMeta", "id": "1000"}
+        ],
+        "output": [
+          {"key":  "foo", "id":  1010}
+        ]
+      }
+    ]
+  }
+}

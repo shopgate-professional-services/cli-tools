@@ -7,6 +7,7 @@ const createLanguage = require('./actions/createLanguage');
 const createSubscription = require('./actions/createSubscriptions');
 const createReduxEntity = require('./actions/createReduxEntity');
 const createStep = require('./actions/createStep');
+const createPipeline = require('./actions/createPipeline');
 
 /**
  * Main app.
@@ -16,44 +17,49 @@ function app() {
     .version(packageInfo.version)
     .description('Shopgate Professional Services CLI tools.')
     // Create component
-    .command('create component', 'Creates bootstrapped component in nearest or newly created ./components folder')
+    .command('add component', 'Creates bootstrapped component in nearest or newly created ./components folder')
     .action((...args) => {
       before();
       createComponent(...args);
     })
     // Create route
-    .command('create route', 'Create route components (Route, Page, etc.)')
+    .command('add route', 'Create route components (Route, Page, etc.)')
     .action((...args) => {
       before();
       createRoute(...args);
     })
     // Create language
-    .command('create language', 'Adds new language translations')
-    .alias('create locale')
+    .command('add language', 'Adds new language translations')
+    .alias('add locale')
     .action((...args) => {
       before();
       createLanguage(...args);
     })
     // Create subscription
-    .command('create subscriptions', 'Adds new subscriptions file if there is none yet.')
-    .alias('create subscription')
+    .command('add subscriptions', 'Adds new subscriptions file if there is none yet.')
+    .alias('add subscription')
     .action((...args) => {
       before();
       createSubscription(...args);
     })
     // Create redux entity
-    .command('create redux entity', 'Adds new redux entity: selectors, actions, reducer')
-    .alias('create redux')
+    .command('add redux entity', 'Adds new redux entity: selectors, actions, reducer')
+    .alias('add redux')
     .action((...args) => {
       before();
       createReduxEntity(...args);
     })
     // Create step (hook)
-    .command('create step', 'Adds new extension backend pipeline step (hook)')
-    .alias('create hook')
+    .command('add step', 'Adds new extension backend pipeline step (hook)')
+    .alias('add hook')
     .action((...args) => {
       before();
       createStep(...args);
+    })
+    .command('add pipeline', 'Adds new pipeline')
+    .action((...args) => {
+      before();
+      createPipeline(...args);
     });
 
   prog.parse(process.argv);
