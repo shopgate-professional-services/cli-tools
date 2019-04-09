@@ -58,8 +58,8 @@ Creates redux entity: reducer, selectors, actions.
 Creates a portal position file and relared extension-config.json entry.
 
 ## Backend commands
-### sps add step (alias: add hook)
-Creates new hook step
+### sps add hook
+Creates new hook step.
 
 ### sps add pipeline
 Creates new empty pipeline with a single step file.

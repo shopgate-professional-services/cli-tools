@@ -50,8 +50,7 @@ function app() {
       createReduxEntity(...args);
     })
     // Create step (hook)
-    .command('add step', 'Adds new extension backend pipeline step (hook)')
-    .alias('add hook')
+    .command('add hook', 'Adds new extension backend pipeline step (hook)')
     .action((...args) => {
       before();
       createStep(...args);
