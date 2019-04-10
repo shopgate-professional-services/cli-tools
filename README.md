@@ -11,8 +11,8 @@ npm i -G @shopgate-ps/cli-tools
 ```
 
 ### Quick start
-In order to execute tools simply type `sps` in your terminal.
-Typing just the `sps` would list all possible commands with their description. If any command need additional params you'd be asked during the execution.
+In order to execute tools simply type `sps` command in your terminal.
+Typing just the `sps` command would list all possible commands with their respective description. If any command need additional params you'd be asked during the execution.
 
 When calling actual commands, terminal must be CWD into your extension root folder, e.x:
 ```bash
@@ -39,30 +39,31 @@ Creates component in the nearest `components` folder. If folder doesn't exists, 
 ### sps add route
 Crates new route with Route and Page component. Adds a PATTERN constant. Makes sure all is configured in extension-config.
 
-### sps add language (alias: add locale)
-Adds new language from an existing template (en-US or first found).
-#### Options
-- Language code: e.x. pl-PL (iso format)
-
 #### Options
 - Route/Page name - Just the name "Stars" would create `StarsRoute`, `StarsPage` and `STARS_PATTERN`
 - Route pattern - Route pattern, e.x. `/stars'
+
+### sps add language (alias: add locale)
+Adds new language from an existing template (en-US or first found).
+
+#### Options
+- Language code: e.x. pl-PL (iso format)
 
 ### sps add subscriptions (alias: add subscription)
 Creates subscriptions files. Would fail if there is already subscriptions file.
 
 ### sps add redux entity (alias: add redux)
-Creates redux entity: reducer, selectors, actions.
+Creates a redux entity: reducer, selectors, actions.
 
 ### sps add portal
 Creates a portal position file and relared extension-config.json entry.
 
 ## Backend commands
 ### sps add hook
-Creates new hook step.
+Creates a new hook step.
 
 ### sps add pipeline
-Creates new empty pipeline with a single step file.
+Creates a new empty pipeline with a single step file.
 
 
 ## About Shopgate
