@@ -3,10 +3,17 @@ cache:
     - node_modules
 language: node_js
 node_js:
-  - "10.10.0"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "lts/*"
+  - "node"
 install:
-  - echo "Hello"
-script: npm run coverage --maxWorkers=4 --ci
+  - npm i
+script:
+  - npm link
+  - sps --version
 branches:
   only:
     - master

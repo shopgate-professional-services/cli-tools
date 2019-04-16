@@ -1,0 +1,5 @@
+import { appWillStart$ } from '@shopgate/pwa-common/streams';
+
+export default function mySubscriptions(subscribe) {
+  subscribe(appWillStart$, () => {});
+};

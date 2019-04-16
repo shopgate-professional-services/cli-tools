@@ -61,6 +61,5 @@ typings/
 .idea/
 .vscode/
 
-package-lock.json
 frontend/config.json
 extension/config.json

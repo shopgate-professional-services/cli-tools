@@ -1,0 +1,29 @@
+import {
+  REQUEST_{{ entityName | upper }},
+  RECEIVE_{{ entityName | upper }},
+} from '../constants';
+
+/**
+ * {{ entityName }} reducer.
+ * @param {Object} state State.
+ * @param {Object} action Action.
+ * @returns {Object}
+ */
+const {{ entityNameCamel }} = (state = {}, action) => {
+  switch(action.type) {
+    case REQUEST_{{ entityName | upper }}:
+      return {
+      ...state,
+
+    };
+    case RECEIVE_{{ entityName | upper }}:
+      return {
+        ...state,
+
+    };
+    default:
+      return state;
+  }
+};
+
+export default {{ entityNameCamel }};
