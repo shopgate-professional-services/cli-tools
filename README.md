@@ -14,7 +14,7 @@ npm i -G @shopgate-ps/cli-tools
 In order to execute CLI tools simply type `sps` in your terminal.
 Typing the `sps` command by its own lists all possible commands with their respective description. If any command needs additional params, you'll be asked during the execution.
 
-When calling commands, the terminal's CWD must be your extension root folder, containing the extension's `package.json` file, e.g.:
+When calling commands, the terminal's CWD must be your extension root folder, containing the extension's config file (`extension-config.json`), e.g.:
 ```bash
 cd ~/myDev/extensions/MyExtension
 ```
