@@ -1,5 +1,7 @@
 const { prompt } = require('enquirer');
-const { read, write, listFiles } = require('../filesystem');
+const {
+  read, write, listFiles, mkdirSafe,
+} = require('../filesystem');
 const { addComponent } = require('../extensionConfig');
 
 /**
@@ -15,7 +17,9 @@ async function createLanguage() {
     },
   ]);
 
+  mkdirSafe('./frontend/locale');
   const existingFiles = listFiles('./frontend/locale');
+
   let template;
   if (existingFiles.length) {
     template = existingFiles.find(el => el === 'en-US.json');

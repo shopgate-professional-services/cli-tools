@@ -1,6 +1,6 @@
 {
   "name": "@shopgate-ps/cli-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shopgate Professional Services CLI tools",
   "main": "index.js",
   "directories": {
