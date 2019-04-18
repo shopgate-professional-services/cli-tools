@@ -10,6 +10,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 ### Removed
 
+## [1.0.2] - 2019-0418
+### Fixed
+Creating new locale adds correct language code to the extension config.
+
 ## [1.0.1] - 2019-0418
 ### Fixed
 Creating `locale` folder automatically when one is missing to avoid crash.
@@ -22,3 +26,4 @@ Creating `locale` folder automatically when one is missing to avoid crash.
 [Unreleased]: https://github.com/shopgate-professional-services/cli-tools/compare/v1.0.1...HEAD
 [1.0.0]: https://github.com/shopgate-professional-services/cli-tools/compare/v0.0.1...v1.0.0
 [1.0.1]: https://github.com/shopgate-professional-services/cli-tools/compare/v1.0.0...v1.0.1
+[1.0.2]: https://github.com/shopgate-professional-services/cli-tools/compare/v1.0.1...v1.0.2

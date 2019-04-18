@@ -37,7 +37,7 @@ async function createLanguage() {
   addComponent({
     type: 'translations',
     path: `frontend/locale/${options.iso}.json`,
-    id: 'locale/de-DE',
+    id: `locale/${options.iso}`,
   });
 }
 
