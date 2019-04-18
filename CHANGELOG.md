@@ -10,11 +10,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 ### Removed
 
-## 1.0.1 - 2019-0418
+## [1.0.1] - 2019-0418
 ### Fixed
 Creating `locale` folder automatically when one is missing to avoid crash.
 
-## 1.0.0 - 2019-04-05
+## [1.0.0] - 2019-04-05
 ### Added
 - Repo init.
 
