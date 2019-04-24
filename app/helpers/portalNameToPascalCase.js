@@ -4,7 +4,7 @@
  * @returns {string}
  */
 function portalNameToPascalCase(portalName) {
-  return portalName.split('_').map(el => el[0] + el.slice(1).toLowerCase()).join('');
+  return portalName.split('.').map(el => el[0].toUpperCase() + el.slice(1).toLowerCase()).join('');
 }
 
 module.exports = portalNameToPascalCase;

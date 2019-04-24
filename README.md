@@ -57,6 +57,8 @@ Creates a redux entity: `reducer`, `selectors`, `actions`.
 
 ### sps add portal
 Creates a portal position file and a respective `extension-config.json` entry.
+#### Options
+- name: portal name, e.x. `page.content.after` will create PageContentAfter file in the `portals` frontend folder and respective `extension-config.json` entry.
 
 ## Backend commands
 ### sps add hook
