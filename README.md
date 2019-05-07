@@ -67,6 +67,13 @@ Creates a new hook step.
 ### sps add pipeline
 Creates a new empty pipeline pointing to a single step file.
 
+## Proxy server
+Sometimes it's handy to sniff to all communication between the app and the Connect system. In order to make it easier, there is a small proxy server app which logs all request and responses between the app and Connect system.
+
+It's only possible to use that with special Shopgate Standalone app which is usually used internally only.
+
+### sps start proxy [--prod]
+Starts the proxy in sandbox or production mode.
 
 ## About Shopgate
 

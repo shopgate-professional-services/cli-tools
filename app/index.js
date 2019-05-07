@@ -9,6 +9,7 @@ const createReduxEntity = require('./actions/createReduxEntity');
 const createStep = require('./actions/createStep');
 const createPipeline = require('./actions/createPipeline');
 const createPortal = require('./actions/createPortal');
+const startProxy = require('./proxyServer/start');
 /**
  * Main app.
  */
@@ -64,6 +65,11 @@ function app() {
     .action((...args) => {
       before();
       createPortal(...args);
+    })
+    .command('start proxy', 'Starts local proxy which logs all app communication to the console')
+    .option('--prod', 'Connects to Connect production stage')
+    .action((args, options) => {
+      startProxy(options);
     });
 
   prog.parse(process.argv);
