@@ -26,7 +26,7 @@ async function createRoute() {
 
   addComponent({
     id: options.name,
-    path: `frontend/routes/${options.name}/index.jsx`,
+    path: `frontend/routes/${options.name}Route/index.jsx`,
     target: 'app.routes',
     type: 'portals',
   });
