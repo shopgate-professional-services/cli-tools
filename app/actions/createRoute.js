@@ -26,26 +26,18 @@ async function createRoute() {
 
   addComponent({
     id: options.name,
-    path: `frontend/routes/${options.name}Route/index.jsx`,
+    path: `frontend/pages/${options.name}/index.jsx`,
     target: 'app.routes',
     type: 'portals',
   });
 
-  mkdirSafe('./frontend/routes');
-  mkdirSafe(`./frontend/routes/${options.name}Route`);
-
   mkdirSafe('./frontend/pages');
-  mkdirSafe(`./frontend/pages/${options.name}Page`);
-
-  const routeComponent = twig({
-    data: read('/templates/Route.js.twig', true),
-  }).render(options);
-  write(`./frontend/routes/${options.name}Route/index.jsx`, routeComponent);
+  mkdirSafe(`./frontend/pages/${options.name}`);
 
   const pageComponent = twig({
     data: read('/templates/Page.js.twig', true),
   }).render(options);
-  write(`./frontend/pages/${options.name}Page/index.jsx`, pageComponent);
+  write(`./frontend/pages/${options.name}/index.jsx`, pageComponent);
 
   append('./frontend/constants.js', `export const ${options.name.toUpperCase()}_PATTERN = '${options.pattern}';`);
   append('./frontend/constants.js', '\n');

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@shopgate/engage/core';
+import { Route } from '@shopgate/pwa-common/components';
+import { {{ name | upper }}_PATTERN } from '../../constants';
 
 /**
  * {{ name }}
@@ -20,4 +22,7 @@ const {{ name }} = () => {
 {{ name }}.propTypes = {
 };
 
-export default {{ name }};
+/**
+ * @returns {JSX}
+ */
+export default () => (<Route pattern={{ '{' }}{{ name | upper }}_PATTERN{{ '}' }} component={{ '{' }}{{ name }}{{ '}' }} />);
