@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withThemeComponents } from '@shopgate-ps/pwa-extension-kit/connectors';
+import { useTheme } from '@shopgate/engage/core';
 
 /**
  * {{ name }}
+ * @return {JSX}
  */
-const {{ name }} = ({ AppBar, View }) => (
-  <View>
-    <AppBar title="dummy title" />
-    Hello world
-  </View>
-);
+const {{ name }} = () => {
+  const { View, AppBar } = useTheme();
 
-{{ name }}.propTypes = {
-  AppBar: PropTypes.func.isRequired,
-  View: PropTypes.func.isRequired,
+  return (
+    <View>
+      <AppBar title="dummy title" />
+      Hello world
+    </View>
+  );
 };
 
-export default withThemeComponents({{ name }});
+{{ name }}.propTypes = {
+};
+
+export default {{ name }};
