@@ -7,7 +7,7 @@ This npm package offers CLI tools which helps creating different pieces of code 
 ### Installation
 It is recommended to install it globally. Please install it using the following command.
 ```bash
-npm i -G @shopgate-ps/cli-tools
+npm i -g @shopgate-ps/cli-tools
 ```
 
 ### Quick start
