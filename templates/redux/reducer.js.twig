@@ -13,14 +13,12 @@ const {{ entityNameCamel }} = (state = {}, action) => {
   switch(action.type) {
     case REQUEST_{{ entityName | upper }}:
       return {
-      ...state,
-
-    };
+        ...state,
+      };
     case RECEIVE_{{ entityName | upper }}:
       return {
         ...state,
-
-    };
+      };
     default:
       return state;
   }
