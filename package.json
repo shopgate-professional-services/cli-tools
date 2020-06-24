@@ -10,7 +10,8 @@
     "test": "mocha --recursive"
   },
   "bin": {
-    "sps": "index.js"
+    "sps": "index.js",
+    "spsi": "interactive.js"
   },
   "repository": {
     "type": "git",

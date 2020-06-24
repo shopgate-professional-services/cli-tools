@@ -67,6 +67,12 @@ Creates a new hook step.
 ### sps add pipeline
 Creates a new empty pipeline pointing to a single step file.
 
+## Interactive commands
+
+- Type in console `spsi`
+- Choose area for sub-commands
+- Choose command to execute
+
 
 ## About Shopgate
 
