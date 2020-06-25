@@ -1,3 +1,4 @@
+import { PipelineRequest } from '@shopgate/engage/core';
 import {
   REQUEST_{{ entityName | upper }},
   RECEIVE_{{ entityName | upper }},
@@ -5,5 +6,11 @@ import {
 
 
 export const fetch{{ entityName }} = () => (dispatch, getState) => {
+  const request = new PipelineRequest('pipeline').dispatch();
 
+  request
+    .then((response) => {})
+    .catch(error => {});
+
+  return request;
 }

@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const {{ namePascalCase }} = ({ children }) => {
-  return null;
+const {{ namePascalCase }} = ({ name, children }) => {
+  return children;
+};
+
+{{ namePascalCase }}.propTypes = {
+  name: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default {{ namePascalCase }};

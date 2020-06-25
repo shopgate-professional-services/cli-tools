@@ -10,7 +10,8 @@
     "test": "mocha --recursive"
   },
   "bin": {
-    "sps": "index.js"
+    "sps": "index.js",
+    "spsi": "interactive.js"
   },
   "repository": {
     "type": "git",
@@ -31,10 +32,10 @@
     "@shopgate/eslint-config": "^6.4.2",
     "chai": "^4.2.0",
     "eslint": "^4.17.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.2.3"
   },
   "dependencies": {
-    "caporal": "^1.2.0",
+    "caporal": "^1.4.0",
     "colors": "^1.3.3",
     "enquirer": "^2.3.0",
     "twig": "^1.13.3"
